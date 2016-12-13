@@ -1,4 +1,3 @@
-import remember from './remember';
 import createComponent from './create-component';
 
 const defaultOptions = {
@@ -6,10 +5,9 @@ const defaultOptions = {
   interval: 1000,
 };
 
-const components = {};
 
 export default ({ name, interval } = defaultOptions) => {
-  const component = remember(components, interval, () => createComponent(interval));
+  const component = createComponent(interval);
 
   return {
     computed: {

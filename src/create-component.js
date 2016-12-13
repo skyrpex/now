@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import moment from 'moment';
+import { memoize } from 'lodash';
 
-export default interval => new Vue({
+export default memoize(interval => new Vue({
   data: {
     now: moment(),
   },
@@ -10,4 +11,4 @@ export default interval => new Vue({
       this.now = moment();
     }, interval);
   },
-});
+}));

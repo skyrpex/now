@@ -21,7 +21,7 @@
   "author": "cristian@pallares.io",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.7 || ^4.0",
+    "lodash": "^0.1 || ^2.0 || ^3.0 || ^4.0",
     "moment": "^2.0",
     "vue": "^1.0 || ^2.0"
   },
