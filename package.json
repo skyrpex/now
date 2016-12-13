@@ -13,6 +13,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish/beta": "np prerelease --skip-cleanup --yolo --tag=beta"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyrpex/now.git"
+  },
   "keywords": [
     "vue",
     "moment",
@@ -20,6 +24,9 @@
   ],
   "author": "cristian@pallares.io",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skyrpex/now/issues"
+  },
   "dependencies": {
     "lodash": "^0.1 || ^2.0 || ^3.0 || ^4.0",
     "moment": "^2.0",
