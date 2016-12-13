@@ -1,6 +1,6 @@
 # Now
 
-This mixin will create a computed property with the current update (that updates each second).
+This mixin will create a computed property with the current time (that updates each second).
 
 ## Installation
 
