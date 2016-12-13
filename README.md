@@ -1,55 +1,37 @@
-# Props To Local
+# Now
 
-This mixins will sync down properties to local data. This allows defining a property that can be changed within the component (using v-model, for example).
-
-A case of use is creating a checkbox component that doesn't required to pass down a value.
+This mixin will create a computed property with the current update (that updates each second).
 
 ## Installation
 
-`npm install @skyrpex/props-to-local`
+`npm install @skyrpex/now`
 
 ## Usage
 
 ```html
 <template>
-  <input type="checkbox" v-model="local.value" @change="$emit('input', $event.target.checked)">
+  <p>{{ now }}</p>
 </template>
 
 <script>
-import propsToLocal '@skyrpex/props-to-local';
+import now from '@skyrpex/now';
 
-// In this example, a 'value' prop is given to propsToLocal.
 export default {
   mixins: [
-    propsToLocal({
-      // Normal props here
-      value: {
-        type: Boolean,
-        default: false,
-      },
-    }),
+    // Will inject a 'now' computed property
+    now(),
   ],
 };
 </script>
 ```
 
-The above example will generate the following component:
+## Options
 
 ```js
-export default {
-  props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      local: {
-        // Will default to false, as stated above.
-        value: this.value,
-      },
-    };
-  },
-};
+import now from '@skyrpex/now';
+
+now({
+  name: 'now', // Name of the computed property
+  interval: 1000, // Update interval
+});
 ```
