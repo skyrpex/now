@@ -5,13 +5,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "lib/index.js",
+  "main": "dist/now.cjs.js",
+  "module": "dist/now.es.js",
   "scripts": {
     "prepublish": "npm run build",
     "start": "npm run build -- --watch",
-    "build": "babel src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish/beta": "np prerelease --skip-cleanup --yolo --tag=beta"
+    "build": "npm run build:cjs && npm run build:es",
+    "build:cjs": "rollup --config --format cjs --output dist/now.cjs.js",
+    "build:es": "rollup --config --format es --output dist/now.es.js",
+    "test": "echo \"No tests yet!\""
   },
   "repository": {
     "type": "git",
@@ -35,11 +37,13 @@
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-eslint": "^7.1.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.19.0",
     "babel-preset-env": "^1.0.2",
     "eslint": "^3.4.0",
     "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1"
   }
 }
