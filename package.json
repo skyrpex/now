@@ -1,7 +1,7 @@
 {
   "name": "@skyrpex/now",
   "description": "Vue mixin that generates a reactive time variable",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
