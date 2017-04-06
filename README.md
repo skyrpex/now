@@ -14,9 +14,17 @@ This mixin will create a computed property with a Moment.js instance. The comput
 
 ## Usage
 
+### Minimal setup
+
 ```html
 <template>
-  <p>{{ now }}</p>
+  <div>
+    <!-- Print the current time, and update each second. -->
+    <p>{{ now }}</p>
+    
+    <!-- You can use any Moment.js method -->
+    <p>{{ now.from() }}</p>
+  </div>
 </template>
 
 <script>
@@ -25,8 +33,34 @@ import now from '@skyrpex/now';
 export default {
   mixins: [
     // Will inject a 'now' computed property
-    now(),
+    now({ /* options... */ }),
   ],
+  data: () => ({
+    createdAt: mo
+  }),
+};
+</script>
+```
+
+### Another use case
+
+```html
+<template>
+  <div>
+    <!-- You can use any Moment.js method -->
+    <p>{{ now.from(createdAt) }}</p>
+  </div>
+</template>
+
+<script>
+import moment from 'moment';
+import now from '@skyrpex/now';
+
+export default {
+  mixins: [now()],
+  data: () => ({
+    createdAt: moment([2007, 0, 28]),
+  }),
 };
 </script>
 ```
