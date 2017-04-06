@@ -21,9 +21,6 @@ This mixin will create a computed property with a Moment.js instance. The comput
   <div>
     <!-- Print the current time, and update each second. -->
     <p>{{ now }}</p>
-    
-    <!-- You can use any Moment.js method -->
-    <p>{{ now.from() }}</p>
   </div>
 </template>
 
@@ -35,9 +32,6 @@ export default {
     // Will inject a 'now' computed property
     now({ /* options... */ }),
   ],
-  data: () => ({
-    createdAt: mo
-  }),
 };
 </script>
 ```
