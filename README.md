@@ -4,7 +4,7 @@
 
 > Works with:
 >
-> <a href="https://github.com/vuejs/vue"><img src="https://img.shields.io/badge/vue-%5E2.0-green.svg" alt="Vue 2"></a>
+> <a href="https://github.com/vuejs/vue"><img src="https://img.shields.io/badge/vue-%5E2.0-green.svg" alt="Vue 2"></a> <a href="https://github.com/vuejs/vue"><img src="https://img.shields.io/badge/vue-%5E1.0-green.svg" alt="Vue 1"></a>
 
 This mixin will create a computed property with a Moment.js instance. The computed property will be updated at a given interval to stay up to date.
 
