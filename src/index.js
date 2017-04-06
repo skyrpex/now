@@ -5,15 +5,12 @@ const defaultOptions = {
   interval: 1000,
 };
 
-
 export default ({ name, interval } = defaultOptions) => {
   const component = createComponent(interval);
 
   return {
     computed: {
-      [name]() {
-        return component.$data.now;
-      },
+      [name]: () => component.$data.now,
     },
   };
 };

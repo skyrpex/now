@@ -1,16 +1,20 @@
 {
-  "presets": [
-    ["env", {
-        "targets": [
-          "node",
-          "chrome",
-          "edge",
-          "firefox"
+    "presets": [
+        [
+            "env",
+            {
+                "targets": [
+                    "node",
+                    "chrome",
+                    "edge",
+                    "firefox"
+                ],
+                "modules": false
+            }
         ]
-      }]
-  ],
-  "plugins": [
-    "transform-object-rest-spread",
-    "add-module-exports"
-  ]
+    ],
+    "plugins": [
+        "external-helpers",
+        "transform-object-rest-spread"
+    ]
 }
